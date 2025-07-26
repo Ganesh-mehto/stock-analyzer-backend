@@ -8,7 +8,8 @@ const Trade = require('./models/Trade'); // ✅ required
 const transformRoutes = require('./routes/transformRoutes');
 
 const app = express();
-app.use(cors({origin: 'https://stock-analyzer-frontend-jfic8oloj-ganeshs-projects-f18eb8b3.vercel.app/'}));
+app.use(cors({ origin: '*', credentials: true }));
+
 app.use(express.json());
 app.use('/api/upload', uploadRoutes);
 app.use('/api/transform', transformRoutes);
