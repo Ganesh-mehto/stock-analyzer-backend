@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const uploadRoutes = require('./routes/uploadRoutes');
 const cors = require('cors');
 require('dotenv').config();
-const Trade = require('./models/Trade'); // ✅ required
+const Trade = require('./models/Trade'); 
 const transformRoutes = require('./routes/transformRoutes');
 
 const app = express();
 app.use(cors({
-  origin: 'https://stock-analyzer-frontend-chi.vercel.app/',
+  origin: 'https://stock-analyzer-frontend-chi.vercel.app',
   methods: ['GET', 'POST'],
   credentials: true
 }));
