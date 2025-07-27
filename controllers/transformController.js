@@ -2,7 +2,6 @@ const Trade = require('../models/Trade');
 const fetchExchangeRates = require('../utils/fetchExchangeRates');
 const fetchSplitEvents = require('../utils/fetchSplitEvents');
 
-
 const transformTrades = async (req, res) => {
   try {
     const trades = await Trade.find();
@@ -36,7 +35,7 @@ const transformTrades = async (req, res) => {
       };
     });
 
-    res.json(adjusted);
+    res.json(Array.isArray(adjusted) ? adjusted : []);
   } catch (error) {
     console.error('Transformation failed:', error);
     res.status(500).json({ error: 'Transformation failed' });
@@ -44,4 +43,3 @@ const transformTrades = async (req, res) => {
 };
 
 module.exports = { transformTrades };
-

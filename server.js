@@ -9,7 +9,7 @@ const transformRoutes = require('./routes/transformRoutes');
 
 const app = express();
 app.use(cors({
-  origin: 'https://stock-analyzer-frontend-chi.vercel.app',
+  origin: "*",//'https://stock-analyzer-frontend-chi.vercel.app',
   methods: ['GET', 'POST'],
   credentials: true
 }));
